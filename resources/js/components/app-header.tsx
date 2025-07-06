@@ -4,14 +4,14 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from '@/components/ui/sheet';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { UserMenuContent } from '@/components/user-menu-content';
 import { useInitials } from '@/hooks/use-initials';
 import { cn } from '@/lib/utils';
 import { type BreadcrumbItem, type NavItem, type SharedData } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
-import { BookOpen, Folder, LayoutGrid, Menu, Search } from 'lucide-react';
+import { BookOpen, Folder, LayoutGrid, Menu, Search, ShoppingCart, Users, BarChart3 } from 'lucide-react';
 import AppLogo from './app-logo';
 import AppLogoIcon from './app-logo-icon';
 
@@ -20,6 +20,21 @@ const mainNavItems: NavItem[] = [
         title: 'Dashboard',
         href: '/dashboard',
         icon: LayoutGrid,
+    },
+    {
+        title: 'Products',
+        href: '/products',
+        icon: ShoppingCart,
+    },
+    {
+        title: 'Customers',
+        href: '/customers',
+        icon: Users,
+    },
+    {
+        title: 'Analytics',
+        href: '/analytics',
+        icon: BarChart3,
     },
 ];
 
@@ -60,6 +75,7 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
                             </SheetTrigger>
                             <SheetContent side="left" className="flex h-full w-64 flex-col items-stretch justify-between bg-sidebar">
                                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                                <SheetDescription className="sr-only">Mobile navigation menu with main navigation items and external links</SheetDescription>
                                 <SheetHeader className="flex justify-start text-left">
                                     <AppLogoIcon className="h-6 w-6 fill-current text-black dark:text-white" />
                                 </SheetHeader>
